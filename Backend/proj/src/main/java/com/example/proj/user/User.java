@@ -23,7 +23,7 @@ public class User extends BaseEntity {
     private String pw;
 
     public User(UserRegisterDto userRegisterDto) {
-        this(userRegisterDto.getEmail(), userRegisterDto.getName(), userRegisterDto.getPw());
+        this(userRegisterDto.getEmail(), userRegisterDto.getNickName(), userRegisterDto.getPw());
     }
 
     public User(String email, String nickName, String pw) {
