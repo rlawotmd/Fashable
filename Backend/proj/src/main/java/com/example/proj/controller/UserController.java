@@ -1,5 +1,6 @@
 package com.example.proj.controller;
 
+import com.example.proj.dto.UserLoginDto;
 import com.example.proj.dto.UserRegisterDto;
 import com.example.proj.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,19 @@ public class UserController {
         System.out.println("userRegisterDto = " + userRegisterDto);
         userService.save(userRegisterDto);
         return "login";
+    }
+
+    //로그인 페이지
+    @PostMapping("/user/login")
+    public String login(@ModelAttribute UserRegisterDto userRegisterDto){
+        UserLoginDto loginResult = userService.login(userRegisterDto);
+        if (loginResult != null){
+            //login 성공
+            return "main";
+        } else {
+            //login 실패
+            return "login";
+        }
     }
 
 }
