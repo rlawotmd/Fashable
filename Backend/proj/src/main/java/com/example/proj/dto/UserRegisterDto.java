@@ -7,11 +7,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter @Setter
 public class UserRegisterDto {
-    private String email;
-    private String pw;
+    private static String email;
+    private static String pw;
     private String nickName;
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
@@ -19,7 +19,7 @@ public class UserRegisterDto {
         this.email = email;
     }
 
-    public String getPw() {
+    public static String getPw() {
         return pw;
     }
 
