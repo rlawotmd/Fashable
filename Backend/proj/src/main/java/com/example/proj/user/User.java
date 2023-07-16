@@ -22,9 +22,17 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String pw;
 
-    public User(UserRegisterDto userRegisterDto) {
-        this(userRegisterDto.getEmail(), userRegisterDto.getNickName(), userRegisterDto.getPw());
-    }
+    public static User toUser(UserRegisterDto userRegisterDto) {
+        User user = new User();
+        user.setEmail(userRegisterDto.getEmail());
+        user.setNickName(userRegisterDto.getNickName());
+        user.setPw(userRegisterDto.getPw());
+        return user;
+
+/*        this(userRegisterDto.getEmail(),
+                userRegisterDto.getNickName(),
+                userRegisterDto.getPw());*/
+    };
 
     public User(String email, String nickName, String pw) {
         this.email = email;
