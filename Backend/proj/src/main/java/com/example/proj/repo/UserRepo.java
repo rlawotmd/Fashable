@@ -5,9 +5,13 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Repository
 @Transactional
 public interface UserRepo extends CrudRepository<User, String> {
+    //이메일로 회원 정보 조회 (select * from member_table where member_email=?)
+    Optional<User> findByEmail(String email);
 }
 
 

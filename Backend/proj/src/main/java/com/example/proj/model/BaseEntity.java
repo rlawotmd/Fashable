@@ -13,4 +13,13 @@ public class BaseEntity {
     public void setCreatedDate() {
         this.createdDate = OffsetDateTime.now();
     }
+
+    protected void setEmail(String email) {
+    }
+
+    protected void setNickName(String nickName) {
+    }
+
+    protected void setPw(String pw) {
+    }
 }
