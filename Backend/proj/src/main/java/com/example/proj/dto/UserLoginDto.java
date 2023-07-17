@@ -12,9 +12,7 @@ public class UserLoginDto {
     private String pw;
 
     public static UserLoginDto toUserLoginDto(User user) {
-        UserLoginDto userLoginDto = new UserLoginDto();
-        userLoginDto.setEmail(user.getEmail());
-        userLoginDto.setPw(user.getPw());
+        UserLoginDto userLoginDto = new UserLoginDto(user.getEmail(), user.getPw());
         return userLoginDto;
     }
 }
